@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +15,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [function ({ addUtilities }) {
+    const newUtilities = {
+      '.animate-left-to-right': {
+        animation: 'slideIn 1s ease-in-out',
+      },
+    };
+    addUtilities(newUtilities);
+  }],
 }
